@@ -1,0 +1,104 @@
+{
+  "version": "fictional-single-v2",
+  "processType": "single",
+  "selector": {
+    "categoryOffset": 2,
+    "subTypeOffset": 5
+  },
+  "commands": [
+    {
+      "direction": "down",
+      "category": "C4",
+      "subType": "9A",
+      "description": "Synthetic beacon modulation request",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "beaconToken",
+          "label": "Beacon token",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        },
+        {
+          "key": "modulation",
+          "label": "Modulation",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": {
+              "4C": "Quartz",
+              "5D": "Nimbus"
+            }
+          }
+        },
+        {
+          "key": "pulseKind",
+          "label": "Pulse kind",
+          "offset": 8,
+          "decoder": {
+            "kind": "enum",
+            "mapping": {
+              "B2": "Glint",
+              "C3": "Halo"
+            }
+          }
+        },
+        {
+          "key": "glintLevel",
+          "label": "Glint level",
+          "offset": 9,
+          "decoder": { "kind": "uint8" },
+          "when": {
+            "sourceOffset": 8,
+            "operator": "equals",
+            "value": "B2"
+          }
+        },
+        {
+          "key": "haloLevel",
+          "label": "Halo level",
+          "offset": 9,
+          "decoder": { "kind": "uint8" },
+          "when": {
+            "sourceOffset": 8,
+            "operator": "equals",
+            "value": "C3"
+          }
+        }
+      ]
+    },
+    {
+      "direction": "up",
+      "category": "C4",
+      "subType": "9B",
+      "description": "Synthetic lattice telemetry report",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "sampleToken",
+          "label": "Sample token",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        },
+        {
+          "key": "latticeState",
+          "label": "Lattice state",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": {
+              "6E": "Shimmer",
+              "7F": "Resonance"
+            }
+          }
+        },
+        {
+          "key": "telemetryLevel",
+          "label": "Telemetry level",
+          "offset": 8,
+          "decoder": { "kind": "uint8" }
+        }
+      ]
+    }
+  ]
+}

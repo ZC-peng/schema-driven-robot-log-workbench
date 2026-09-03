@@ -1,0 +1,150 @@
+{
+  "version": "fictional-single-2.0.0",
+  "processType": "single",
+  "selector": {
+    "categoryOffset": 2,
+    "subTypeOffset": 5
+  },
+  "commands": [
+    {
+      "direction": "down",
+      "category": "C4",
+      "subType": "9A",
+      "description": "Modulate a synthetic beacon",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "beaconToken",
+          "label": "Beacon token",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        },
+        {
+          "key": "modulation",
+          "label": "Modulation",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "4C": "Quartz", "5D": "Nimbus" }
+          }
+        },
+        {
+          "key": "pulseKind",
+          "label": "Pulse kind",
+          "offset": 8,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "B2": "Glint", "C3": "Halo" }
+          }
+        },
+        {
+          "key": "glintLevel",
+          "label": "Glint level",
+          "offset": 9,
+          "decoder": { "kind": "uint8" },
+          "when": { "sourceOffset": 8, "operator": "equals", "value": "B2" }
+        },
+        {
+          "key": "haloLevel",
+          "label": "Halo level",
+          "offset": 9,
+          "decoder": { "kind": "uint8" },
+          "when": { "sourceOffset": 8, "operator": "equals", "value": "C3" }
+        }
+      ]
+    },
+    {
+      "direction": "up",
+      "category": "C4",
+      "subType": "9B",
+      "description": "Report synthetic lattice telemetry",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "sampleToken",
+          "label": "Sample token",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        },
+        {
+          "key": "latticeState",
+          "label": "Lattice state",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "6E": "Shimmer", "7F": "Resonance" }
+          }
+        },
+        {
+          "key": "telemetryLevel",
+          "label": "Telemetry level",
+          "offset": 8,
+          "decoder": { "kind": "uint8" }
+        }
+      ]
+    },
+    {
+      "direction": "down",
+      "category": "D5",
+      "subType": "A6",
+      "description": "Select a synthetic crystal fork",
+      "minBytes": 7,
+      "details": [
+        {
+          "key": "forkKind",
+          "label": "Fork kind",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        },
+        {
+          "key": "azureFacet",
+          "label": "Azure facet",
+          "offset": 7,
+          "decoder": { "kind": "hex" },
+          "when": { "sourceOffset": 6, "operator": "equals", "value": "8C" }
+        },
+        {
+          "key": "violetFacet",
+          "label": "Violet facet",
+          "offset": 7,
+          "decoder": { "kind": "hex" },
+          "when": { "sourceOffset": 6, "operator": "equals", "value": "9E" }
+        }
+      ]
+    },
+    {
+      "direction": "down",
+      "category": "D6",
+      "subType": "A7",
+      "description": "Synthetic optional prism extension",
+      "minBytes": 7,
+      "details": [
+        {
+          "key": "extension",
+          "label": "Extension",
+          "offset": 7,
+          "decoder": { "kind": "uint8" },
+          "when": { "sourceOffset": 6, "operator": "equals", "value": "5D" }
+        }
+      ]
+    },
+    {
+      "direction": "down",
+      "category": "D8",
+      "subType": "A9",
+      "description": "Synthetic spectrum fallback",
+      "minBytes": 7,
+      "details": [
+        {
+          "key": "spectrum",
+          "label": "Spectrum",
+          "offset": 6,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "2A": "Copper", "3B": "Indigo" }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "version": "fictional-multi-2.0.0",
+  "processType": "multi",
+  "selector": {
+    "categoryOffset": 2,
+    "subTypeOffset": 5
+  },
+  "commands": [
+    {
+      "direction": "down",
+      "category": "E6",
+      "subType": "D2",
+      "description": "Assign a synthetic relay shard",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "shardId",
+          "label": "Shard identifier",
+          "offset": 6,
+          "decoder": { "kind": "uint8" }
+        },
+        {
+          "key": "assignmentMode",
+          "label": "Assignment mode",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "2A": "Orbit", "3B": "Weave", "4D": "Scatter" }
+          }
+        },
+        {
+          "key": "relayLevel",
+          "label": "Relay level",
+          "offset": 8,
+          "decoder": { "kind": "uint8" }
+        }
+      ]
+    },
+    {
+      "direction": "up",
+      "category": "E6",
+      "subType": "D3",
+      "description": "Report a synthetic relay-shard result",
+      "minBytes": 9,
+      "details": [
+        {
+          "key": "shardId",
+          "label": "Shard identifier",
+          "offset": 6,
+          "decoder": { "kind": "uint8" }
+        },
+        {
+          "key": "resultState",
+          "label": "Result state",
+          "offset": 7,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "5A": "Captured", "6B": "Refracted", "7C": "Dispersed" }
+          }
+        },
+        {
+          "key": "resultKind",
+          "label": "Result kind",
+          "offset": 8,
+          "decoder": {
+            "kind": "enum",
+            "mapping": { "9D": "Echo", "A8": "Facet", "B9": "Spectrum" }
+          }
+        },
+        {
+          "key": "echoValue",
+          "label": "Echo value",
+          "offset": 9,
+          "decoder": { "kind": "uint8" },
+          "when": { "sourceOffset": 8, "operator": "equals", "value": "9D" }
+        },
+        {
+          "key": "spectrumCode",
+          "label": "Spectrum code",
+          "offset": 9,
+          "decoder": { "kind": "hex" },
+          "when": { "sourceOffset": 8, "operator": "in", "values": ["A8", "B9"] }
+        }
+      ]
+    },
+    {
+      "direction": "up",
+      "category": "E7",
+      "subType": "D4",
+      "description": "Report a synthetic telemetry shard",
+      "minBytes": 7,
+      "details": [
+        {
+          "key": "shardToken",
+          "label": "Shard token",
+          "offset": 6,
+          "decoder": { "kind": "hex" }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+* text=auto
+
+*.css text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.log text eol=lf
+*.md text eol=lf
+*.ts text eol=lf
+*.vue text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+*.cmd text eol=crlf
+*.png binary

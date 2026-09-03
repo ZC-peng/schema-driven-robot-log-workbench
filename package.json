@@ -1,0 +1,62 @@
+{
+  "name": "schema-driven-robot-log-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A privacy-safe, browser-only Vue 3 workbench for schema-driven robot log parsing and dual virtualized inspection using synthetic data.",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "ZC-peng",
+    "url": "https://github.com/ZC-peng"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZC-peng/schema-driven-robot-log-workbench.git"
+  },
+  "homepage": "https://github.com/ZC-peng/schema-driven-robot-log-workbench",
+  "bugs": {
+    "url": "https://github.com/ZC-peng/schema-driven-robot-log-workbench/issues"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "vite apps/web",
+    "build": "npm run build --workspace @srlw/web",
+    "preview": "vite preview apps/web",
+    "typecheck": "npm run typecheck:workspaces && npm run typecheck:tooling && npm run typecheck:browser-bench && npm run typecheck:tab-switch-bench",
+    "typecheck:workspaces": "npm run typecheck --workspaces --if-present",
+    "typecheck:tooling": "tsc -p tsconfig.tooling.json",
+    "typecheck:browser-bench": "tsc -p benchmarks/browser/tsconfig.json",
+    "typecheck:tab-switch-bench": "tsc -p benchmarks/tab-switch/tsconfig.json",
+    "lint": "eslint . --max-warnings=0",
+    "validate:protocols": "vite-node tools/validate-protocols.ts",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "fixtures:generate": "vite-node tools/generate-fixtures.ts",
+    "bench:parser": "vite-node benchmarks/parser/run.ts",
+    "bench:browser": "playwright test --config benchmarks/browser/playwright.benchmark.config.ts",
+    "bench:tab-switch-ab": "playwright test --config benchmarks/tab-switch/playwright.ab.config.ts",
+    "bench": "npm run bench:parser && npm run bench:browser"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.4.0",
+    "@vitest/coverage-v8": "4.1.11",
+    "eslint": "10.9.1",
+    "eslint-plugin-vue": "10.10.0",
+    "globals": "17.12.0",
+    "happy-dom": "20.12.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.69.0",
+    "vite-node": "6.0.0",
+    "vitest": "4.1.11"
+  }
+}

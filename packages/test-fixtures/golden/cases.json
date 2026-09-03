@@ -1,0 +1,330 @@
+[
+  {
+    "name": "single downlink glint branch",
+    "rule": "TX maps to down, selector bytes two and five choose the beacon command, and the B2 condition enables only glintLevel.",
+    "inputLog": "[00:00:00] [WIRE:TX] F1:31:C4:8E:72:9A:4D:4C:B2:2A",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "categories": ["C4"],
+      "subTypes": ["9A"],
+      "issueCodes": [],
+      "fieldValues": { "beaconToken": "4D", "modulation": "Quartz", "pulseKind": "Glint", "glintLevel": "42" },
+      "fieldApplied": { "glintLevel": true, "haloLevel": false },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "single downlink halo branch",
+    "rule": "The same selector may activate a mutually exclusive field interpretation when the pulse discriminator changes to C3.",
+    "inputLog": "[WIRE:TX] F1:31:C4:8E:72:9A:5E:5D:C3:0B",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "beaconToken": "5E", "modulation": "Nimbus", "pulseKind": "Halo", "haloLevel": "11" },
+      "fieldApplied": { "glintLevel": false, "haloLevel": true },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "single uplink whitespace payload",
+    "rule": "RX maps to up and two-digit bytes separated by whitespace are decoded the same way as colon-separated bytes.",
+    "inputLog": "[00:00:01] [WIRE:RX] F2 31 C4 8F 73 9B 5E 6E 64",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["up"],
+      "rawLineIndices": [0],
+      "categories": ["C4"],
+      "subTypes": ["9B"],
+      "issueCodes": [],
+      "fieldValues": { "sampleToken": "5E", "latticeState": "Shimmer", "telemetryLevel": "100" },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "multi downlink relay assignment",
+    "rule": "A D7 marker in byte one selects the multi bundle before the configured selector resolves the relay assignment command.",
+    "inputLog": "[00:00:02] [WIRE:TX] F3:D7:E6:90:74:D2:0F:2A:09",
+    "expected": {
+      "processType": "multi",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "categories": ["E6"],
+      "subTypes": ["D2"],
+      "issueCodes": [],
+      "fieldValues": { "shardId": "15", "assignmentMode": "Orbit", "relayLevel": "9" },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "multi uplink equals branch",
+    "rule": "The 9D discriminator satisfies the equals condition, so echoValue is decoded while spectrumCode remains unapplied.",
+    "inputLog": "[00:00:03] [WIRE:RX] F4:D7:E6:91:75:D3:07:5A:9D:0A",
+    "expected": {
+      "processType": "multi",
+      "statuses": ["translated"],
+      "directions": ["up"],
+      "rawLineIndices": [0],
+      "categories": ["E6"],
+      "subTypes": ["D3"],
+      "issueCodes": [],
+      "fieldValues": { "shardId": "7", "resultState": "Captured", "resultKind": "Echo", "echoValue": "10" },
+      "fieldApplied": { "echoValue": true, "spectrumCode": false },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "multi uplink first in branch",
+    "rule": "The A8 discriminator belongs to the declared in-set, enabling spectrumCode and leaving the mutually exclusive echoValue unapplied.",
+    "inputLog": "[WIRE:RX] F4:D7:E6:91:75:D3:08:6B:A8:BC",
+    "expected": {
+      "processType": "multi",
+      "statuses": ["translated"],
+      "directions": ["up"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "shardId": "8", "resultState": "Refracted", "resultKind": "Facet", "spectrumCode": "BC" },
+      "fieldApplied": { "echoValue": false, "spectrumCode": true },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "multi uplink second in branch",
+    "rule": "Every member of an in-condition is accepted; B9 selects the spectrum branch and preserves its raw hexadecimal value.",
+    "inputLog": "[WIRE:RX] F4:D7:E6:91:75:D3:09:7C:B9:CD",
+    "expected": {
+      "processType": "multi",
+      "statuses": ["translated"],
+      "directions": ["up"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "shardId": "9", "resultState": "Dispersed", "resultKind": "Spectrum", "spectrumCode": "CD" },
+      "fieldApplied": { "echoValue": false, "spectrumCode": true },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "first same-offset crystal branch",
+    "rule": "Two fields may share a target offset when their equals conditions are exclusive; 8C activates only the azure interpretation.",
+    "inputLog": "[WIRE:TX] F1:31:D5:8E:72:A6:8C:55",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "forkKind": "8C", "azureFacet": "55" },
+      "fieldApplied": { "azureFacet": true, "violetFacet": false },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "second same-offset crystal branch",
+    "rule": "Changing the discriminator to 9E keeps the shared byte but applies only the violet interpretation.",
+    "inputLog": "[WIRE:TX] F1:31:D5:8E:72:A6:9E:66",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "forkKind": "9E", "violetFacet": "66" },
+      "fieldApplied": { "azureFacet": false, "violetFacet": true },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "unknown selector remains visible",
+    "rule": "A decodable line whose configured category and subtype do not match the catalog is unknown rather than malformed.",
+    "inputLog": "[WIRE:TX] F1:31:FA:8E:72:FB:01",
+    "expected": {
+      "processType": "single",
+      "statuses": ["unknown"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "categories": ["FA"],
+      "subTypes": ["FB"],
+      "issueCodes": ["UNKNOWN_COMMAND"],
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 1, "malformed": 0 }
+    }
+  },
+  {
+    "name": "direction participates in lookup",
+    "rule": "A known category and subtype with the wrong direction does not reuse the opposite-direction schema and remains unknown.",
+    "inputLog": "[WIRE:RX] F1:31:C4:8E:72:9A:4D:4C:B2:2A",
+    "expected": {
+      "processType": "single",
+      "statuses": ["unknown"],
+      "directions": ["up"],
+      "rawLineIndices": [0],
+      "categories": ["C4"],
+      "subTypes": ["9A"],
+      "issueCodes": ["UNKNOWN_COMMAND"],
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 1, "malformed": 0 }
+    }
+  },
+  {
+    "name": "invalid hex does not block a later command",
+    "rule": "An invalid target is retained as malformed while a later valid target still determines the process type and translates.",
+    "inputLog": "[WIRE:TX] GG:31:C4:8E:72:9A\nsynthetic aurora heartbeat\n[WIRE:TX] F1:31:C4:8E:72:9A:4D:4C:B2:2A",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed", "translated"],
+      "directions": ["down", "down"],
+      "rawLineIndices": [0, 2],
+      "issueCodes": ["INVALID_HEX"],
+      "summary": { "totalLines": 3, "targetLines": 2, "translated": 1, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "one-byte line does not block detection",
+    "rule": "A decoded target with fewer than two bytes is malformed, but a later target can still determine the whole-log process type.",
+    "inputLog": "[WIRE:TX] F1\n[WIRE:TX] F1:31:C4:8E:72:9A:4D:4C:B2:2A",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed", "translated"],
+      "directions": ["down", "down"],
+      "rawLineIndices": [0, 1],
+      "issueCodes": ["INSUFFICIENT_BYTES"],
+      "summary": { "totalLines": 2, "targetLines": 2, "translated": 1, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "selector offset is missing",
+    "rule": "Process detection may succeed with five bytes, but protocol lookup is malformed until configured selector offset five exists.",
+    "inputLog": "[WIRE:TX] F1:31:C4:8E:72",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "categories": ["C4"],
+      "subTypes": [null],
+      "issueCodes": ["INSUFFICIENT_BYTES"],
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "empty log has no target lines",
+    "rule": "An empty source has zero physical lines and reports a single NO_TARGET_LINES issue without selecting a process type.",
+    "inputLog": "",
+    "expected": {
+      "statuses": [],
+      "rawLineIndices": [],
+      "issueCodes": ["NO_TARGET_LINES"],
+      "summary": { "totalLines": 0, "targetLines": 0, "translated": 0, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "only invalid targets cannot select a process",
+    "rule": "When every target has invalid hex, the row error is retained and process detection adds NO_DECODABLE_TARGET_LINES.",
+    "inputLog": "[WIRE:TX] not-hex",
+    "expected": {
+      "statuses": ["malformed"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": ["INVALID_HEX", "NO_DECODABLE_TARGET_LINES"],
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "mixed single and multi log is rejected",
+    "rule": "Process type is chosen for the complete log, so observing both 31 and D7 markers makes every decodable target malformed.",
+    "inputLog": "[WIRE:TX] F1:31:C4:8E:72:9A:4D:4C:B2:2A\n[WIRE:TX] F3:D7:E6:90:74:D2:0F:2A:09",
+    "expected": {
+      "statuses": ["malformed", "malformed"],
+      "directions": ["down", "down"],
+      "rawLineIndices": [0, 1],
+      "issueCodes": ["MIXED_PROCESS_TYPES"],
+      "summary": { "totalLines": 2, "targetLines": 2, "translated": 0, "unknown": 0, "malformed": 2 }
+    }
+  },
+  {
+    "name": "raw line index includes ordinary lines",
+    "rule": "Command rawLineIndex values refer to the original source lines instead of positions in the filtered target subset.",
+    "inputLog": "synthetic aurora boot\nsynthetic prism ready\n[WIRE:RX] F2:31:C4:8F:73:9B:5E:6E:64",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["up"],
+      "rawLineIndices": [2],
+      "issueCodes": [],
+      "summary": { "totalLines": 3, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "CRLF and blank lines preserve indices",
+    "rule": "CRLF separators and blank physical lines count toward rawLineIndex, while a trailing newline does not create a phantom line.",
+    "inputLog": "synthetic aurora boot\r\n[WIRE:RX] F2:31:C4:8F:73:9B:5E:6E:64\r\n\r\n[WIRE:RX] F2:31:C4:8F:73:9B:6F:7F:32\r\n",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated", "translated"],
+      "directions": ["up", "up"],
+      "rawLineIndices": [1, 3],
+      "issueCodes": [],
+      "summary": { "totalLines": 4, "targetLines": 2, "translated": 2, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "conditional source offset is missing",
+    "rule": "A known command missing its condition source is malformed and retains the conditional field with applied set to false.",
+    "inputLog": "[WIRE:TX] F1:31:D6:8E:72:A7",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": ["INSUFFICIENT_BYTES"],
+      "fieldApplied": { "extension": false },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "conditional target offset is missing",
+    "rule": "When the condition source matches but its value byte is absent, the command is malformed and the field remains applied.",
+    "inputLog": "[WIRE:TX] F1:31:D6:8E:72:A7:5D",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": ["INSUFFICIENT_BYTES"],
+      "fieldApplied": { "extension": true },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 0, "unknown": 0, "malformed": 1 }
+    }
+  },
+  {
+    "name": "unmapped enum preserves raw evidence",
+    "rule": "An enum byte outside its mapping still translates deterministically by exposing an uppercase hexadecimal fallback value.",
+    "inputLog": "[WIRE:TX] F1:31:D8:8E:72:A9:FF",
+    "expected": {
+      "processType": "single",
+      "statuses": ["translated"],
+      "directions": ["down"],
+      "rawLineIndices": [0],
+      "issueCodes": [],
+      "fieldValues": { "spectrum": "Unknown (0xFF)" },
+      "summary": { "totalLines": 1, "targetLines": 1, "translated": 1, "unknown": 0, "malformed": 0 }
+    }
+  },
+  {
+    "name": "ambiguous direction does not block later rows",
+    "rule": "A row containing both supported direction markers is malformed, and parsing continues with later unambiguous targets.",
+    "inputLog": "[WIRE:TX] [WIRE:RX] F1:31:C4:8E:72:9A:4D:4C:B2:2A\n[WIRE:TX] F1:31:C4:8E:72:9A:4D:4C:B2:2A",
+    "expected": {
+      "processType": "single",
+      "statuses": ["malformed", "translated"],
+      "directions": [null, "down"],
+      "rawLineIndices": [0, 1],
+      "issueCodes": ["MISSING_DIRECTION"],
+      "summary": { "totalLines": 2, "targetLines": 2, "translated": 1, "unknown": 0, "malformed": 1 }
+    }
+  }
+]

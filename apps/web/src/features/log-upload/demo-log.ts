@@ -1,0 +1,12 @@
+export const SYNTHETIC_DEMO_LOG = `[00:00:00.001] fictional workbench boot
+[00:00:00.014] [WIRE:RX] F2:31:C4:8F:73:9B:CD:6E:64
+[00:00:00.028] fictional lattice clock
+[00:00:00.051] [WIRE:TX] F1:31:C4:8E:72:9A:AB:5D:C3:1E
+[00:00:00.087] [WIRE:RX] F2:31:C4:8F:73:9B:CE:7F:32
+[00:00:00.105] [WIRE:TX] F9:31:F8:92:76:E1:BC:4D:11
+[00:00:00.141] [WIRE:RX] F2:31:C4:8F:73:9B:CF:8D:14
+[00:00:00.177] [WIRE:TX] F1:31:C4:8E:72:9A:AC:4C:B2:07
+[00:00:00.212] fictional carrier sample ignored
+[00:00:00.250] [WIRE:RX] GG:31:C4:8F:73:9B:11:6E:21
+[00:00:00.301] [WIRE:TX] F1:31:C4
+[00:00:00.350] synthetic demo finished`

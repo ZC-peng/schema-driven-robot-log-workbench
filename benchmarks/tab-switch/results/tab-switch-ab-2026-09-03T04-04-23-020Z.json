@@ -1,0 +1,1243 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-03T04:04:23.020Z",
+  "syntheticDataOnly": true,
+  "historicalProductionData": false,
+  "purpose": "Current privacy-safe reconstruction: same-run A/B of historical one-sided versus corrected two-sided list virtualization.",
+  "productionDefaultUnchanged": true,
+  "environment": {
+    "browser": "chromium 152.0.7977.65",
+    "browserChannel": "chrome",
+    "node": "v24.15.0",
+    "os": "win32 10.0.26200",
+    "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  "sourceRevision": {
+    "gitCommit": null,
+    "sourceFilesSha256": "sha256:67ccb495d55b909815d58c79c6ab5b7cb851704ae58a9fbbae662baf167505de",
+    "sourceFiles": [
+      "apps/web/src/features/log-workspace/LogWorkspace.vue",
+      "apps/web/src/features/log-workspace/ResultCommandRow.vue",
+      "apps/web/src/features/log-workspace/SessionTabs.vue",
+      "apps/web/src/stores/workspace.ts",
+      "packages/virtual-list/src/FixedVirtualList.vue",
+      "benchmarks/browser/fixtures.ts",
+      "benchmarks/tab-switch/run.ab.spec.ts"
+    ]
+  },
+  "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+  "fixture": {
+    "seed": 20260901,
+    "secondSeed": 20260902,
+    "lineCountPerSession": 30000,
+    "targetEvery": 10,
+    "targetResultCountPerSession": 3000,
+    "sessionCountPerVariant": 2,
+    "files": [
+      {
+        "fileName": "synthetic-single-30000-seed-20260901.log",
+        "processType": "single",
+        "lineCount": 30000,
+        "targetLineCount": 3000
+      },
+      {
+        "fileName": "synthetic-multi-30000-seed-20260902.log",
+        "processType": "multi",
+        "lineCount": 30000,
+        "targetLineCount": 3000
+      }
+    ]
+  },
+  "design": {
+    "variantA": {
+      "id": "A",
+      "label": "左侧虚拟化、右侧完整渲染",
+      "rightRendering": "full",
+      "query": "?__srlw_benchmark_right=full"
+    },
+    "variantB": {
+      "id": "B",
+      "label": "左右双侧虚拟化",
+      "rightRendering": "virtual",
+      "query": "?__srlw_benchmark_right=virtual"
+    },
+    "sharedResultRowComponent": "apps/web/src/features/log-workspace/ResultCommandRow.vue",
+    "order": "ABBA repeated",
+    "sequence": [
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A"
+    ],
+    "samplesPerVariant": 30,
+    "warmupRunsPerVariant": 4,
+    "sessionsParsedBeforeMeasurement": true,
+    "pageBroughtToFrontBeforeEachSample": true,
+    "measurementBoundary": "performance.now() immediately before inactive tab click through heading/list commit and two requestAnimationFrame boundaries.",
+    "excludedFromTiming": [
+      "file read",
+      "SHA-256 deduplication",
+      "log parsing"
+    ]
+  },
+  "rawSamples": [
+    {
+      "ordinal": 1,
+      "sequenceIndex": 0,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 283.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27305,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        242
+      ]
+    },
+    {
+      "ordinal": 1,
+      "sequenceIndex": 1,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 11.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 424,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 2,
+      "sequenceIndex": 2,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 11.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 424,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 2,
+      "sequenceIndex": 3,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 327,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27305,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        279
+      ]
+    },
+    {
+      "ordinal": 3,
+      "sequenceIndex": 4,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 385.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        318,
+        66
+      ]
+    },
+    {
+      "ordinal": 3,
+      "sequenceIndex": 5,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 12.5,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 424,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 4,
+      "sequenceIndex": 6,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 12.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 424,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 4,
+      "sequenceIndex": 7,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 356.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        313
+      ]
+    },
+    {
+      "ordinal": 5,
+      "sequenceIndex": 8,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 447,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        400
+      ]
+    },
+    {
+      "ordinal": 5,
+      "sequenceIndex": 9,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 11.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 6,
+      "sequenceIndex": 10,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 10.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 6,
+      "sequenceIndex": 11,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 288.4,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        245
+      ]
+    },
+    {
+      "ordinal": 7,
+      "sequenceIndex": 12,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 298.2,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        256
+      ]
+    },
+    {
+      "ordinal": 7,
+      "sequenceIndex": 13,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 11.2,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 8,
+      "sequenceIndex": 14,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 11.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 8,
+      "sequenceIndex": 15,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 307.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        264
+      ]
+    },
+    {
+      "ordinal": 9,
+      "sequenceIndex": 16,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 357.8,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        293,
+        64
+      ]
+    },
+    {
+      "ordinal": 9,
+      "sequenceIndex": 17,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 10.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 10,
+      "sequenceIndex": 18,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 16,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 10,
+      "sequenceIndex": 19,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 344,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        290,
+        53
+      ]
+    },
+    {
+      "ordinal": 11,
+      "sequenceIndex": 20,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 509.4,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        466
+      ]
+    },
+    {
+      "ordinal": 11,
+      "sequenceIndex": 21,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 12.5,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 12,
+      "sequenceIndex": 22,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 11,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 12,
+      "sequenceIndex": 23,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 308.5,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        265
+      ]
+    },
+    {
+      "ordinal": 13,
+      "sequenceIndex": 24,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 306.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        262
+      ]
+    },
+    {
+      "ordinal": 13,
+      "sequenceIndex": 25,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 11.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 14,
+      "sequenceIndex": 26,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 12.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 14,
+      "sequenceIndex": 27,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 304.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        260
+      ]
+    },
+    {
+      "ordinal": 15,
+      "sequenceIndex": 28,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 314,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        263,
+        51
+      ]
+    },
+    {
+      "ordinal": 15,
+      "sequenceIndex": 29,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 10.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 16,
+      "sequenceIndex": 30,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 10.5,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 16,
+      "sequenceIndex": 31,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 351.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        291,
+        60
+      ]
+    },
+    {
+      "ordinal": 17,
+      "sequenceIndex": 32,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 343.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        291,
+        52
+      ]
+    },
+    {
+      "ordinal": 17,
+      "sequenceIndex": 33,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 10.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 18,
+      "sequenceIndex": 34,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 15.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 18,
+      "sequenceIndex": 35,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 327.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        284
+      ]
+    },
+    {
+      "ordinal": 19,
+      "sequenceIndex": 36,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 302.4,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        252
+      ]
+    },
+    {
+      "ordinal": 19,
+      "sequenceIndex": 37,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 10.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 20,
+      "sequenceIndex": 38,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 13.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 20,
+      "sequenceIndex": 39,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 400.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        355
+      ]
+    },
+    {
+      "ordinal": 21,
+      "sequenceIndex": 40,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 289.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        245
+      ]
+    },
+    {
+      "ordinal": 21,
+      "sequenceIndex": 41,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 10.9,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 22,
+      "sequenceIndex": 42,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 11.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 22,
+      "sequenceIndex": 43,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 316.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        258
+      ]
+    },
+    {
+      "ordinal": 23,
+      "sequenceIndex": 44,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 337.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        278,
+        58
+      ]
+    },
+    {
+      "ordinal": 23,
+      "sequenceIndex": 45,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 11.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 24,
+      "sequenceIndex": 46,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 11.4,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 24,
+      "sequenceIndex": 47,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 347.1,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        291,
+        52
+      ]
+    },
+    {
+      "ordinal": 25,
+      "sequenceIndex": 48,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 428,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        364,
+        63
+      ]
+    },
+    {
+      "ordinal": 25,
+      "sequenceIndex": 49,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 9.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 26,
+      "sequenceIndex": 50,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 10.2,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 26,
+      "sequenceIndex": 51,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 296.8,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        254
+      ]
+    },
+    {
+      "ordinal": 27,
+      "sequenceIndex": 52,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 301.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        257
+      ]
+    },
+    {
+      "ordinal": 27,
+      "sequenceIndex": 53,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 9.5,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 28,
+      "sequenceIndex": 54,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 9.3,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 28,
+      "sequenceIndex": 55,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 314.7,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        268
+      ]
+    },
+    {
+      "ordinal": 29,
+      "sequenceIndex": 56,
+      "variant": "A",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 344.2,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        287,
+        51
+      ]
+    },
+    {
+      "ordinal": 29,
+      "sequenceIndex": 57,
+      "variant": "B",
+      "targetFileName": "synthetic-single-30000-seed-20260901.log",
+      "elapsedMs": 9.8,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 30,
+      "sequenceIndex": 58,
+      "variant": "B",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 10.2,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 13,
+      "totalElementCount": 414,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": []
+    },
+    {
+      "ordinal": 30,
+      "sequenceIndex": 59,
+      "variant": "A",
+      "targetFileName": "synthetic-multi-30000-seed-20260902.log",
+      "elapsedMs": 373.6,
+      "leftRenderedDomCount": 26,
+      "rightRenderedDomCount": 3000,
+      "totalElementCount": 27295,
+      "longTaskSupported": true,
+      "longTaskDurationsMs": [
+        312,
+        61
+      ]
+    }
+  ],
+  "summaries": [
+    {
+      "variant": "A",
+      "label": "左侧虚拟化、右侧完整渲染",
+      "rightRendering": "full",
+      "samples": 30,
+      "rawValuesMs": [
+        283.3,
+        327,
+        385.7,
+        356.1,
+        447,
+        288.4,
+        298.2,
+        307.9,
+        357.8,
+        344,
+        509.4,
+        308.5,
+        306.9,
+        304.9,
+        314,
+        351.7,
+        343.3,
+        327.6,
+        302.4,
+        400.9,
+        289.1,
+        316.7,
+        337.1,
+        347.1,
+        428,
+        296.8,
+        301.7,
+        314.7,
+        344.2,
+        373.6
+      ],
+      "medianMs": 327,
+      "p95Ms": 447,
+      "minMs": 283.3,
+      "maxMs": 509.4,
+      "rightRenderedDomCounts": [
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000,
+        3000
+      ],
+      "rightRenderedDomCountMin": 3000,
+      "rightRenderedDomCountMax": 3000,
+      "longTaskSupported": true,
+      "longTaskSampleCount": 30,
+      "rawLongTaskDurationsMsBySample": [
+        [
+          242
+        ],
+        [
+          279
+        ],
+        [
+          318,
+          66
+        ],
+        [
+          313
+        ],
+        [
+          400
+        ],
+        [
+          245
+        ],
+        [
+          256
+        ],
+        [
+          264
+        ],
+        [
+          293,
+          64
+        ],
+        [
+          290,
+          53
+        ],
+        [
+          466
+        ],
+        [
+          265
+        ],
+        [
+          262
+        ],
+        [
+          260
+        ],
+        [
+          263,
+          51
+        ],
+        [
+          291,
+          60
+        ],
+        [
+          291,
+          52
+        ],
+        [
+          284
+        ],
+        [
+          252
+        ],
+        [
+          355
+        ],
+        [
+          245
+        ],
+        [
+          258
+        ],
+        [
+          278,
+          58
+        ],
+        [
+          291,
+          52
+        ],
+        [
+          364,
+          63
+        ],
+        [
+          254
+        ],
+        [
+          257
+        ],
+        [
+          268
+        ],
+        [
+          287,
+          51
+        ],
+        [
+          312,
+          61
+        ]
+      ]
+    },
+    {
+      "variant": "B",
+      "label": "左右双侧虚拟化",
+      "rightRendering": "virtual",
+      "samples": 30,
+      "rawValuesMs": [
+        11.3,
+        11.6,
+        12.5,
+        12.6,
+        11.3,
+        10.6,
+        11.2,
+        11.3,
+        10.9,
+        16,
+        12.5,
+        11,
+        11.6,
+        12.7,
+        10.9,
+        10.5,
+        10.9,
+        15.9,
+        10.6,
+        13.1,
+        10.9,
+        11.3,
+        11.1,
+        11.4,
+        9.7,
+        10.2,
+        9.5,
+        9.3,
+        9.8,
+        10.2
+      ],
+      "medianMs": 11.1,
+      "p95Ms": 15.9,
+      "minMs": 9.3,
+      "maxMs": 16,
+      "rightRenderedDomCounts": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "rightRenderedDomCountMin": 13,
+      "rightRenderedDomCountMax": 13,
+      "longTaskSupported": true,
+      "longTaskSampleCount": 0,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  ],
+  "comparison": {
+    "baseline": "A",
+    "candidate": "B",
+    "medianReductionMs": 315.9,
+    "medianReductionPercent": 96.606,
+    "p95ReductionMs": 431.1,
+    "p95ReductionPercent": 96.443,
+    "interpretationBoundary": "This is a controlled result on the recorded machine and synthetic reconstruction, not an internship production measurement or a universal speedup claim."
+  },
+  "exclusions": {
+    "fps": "not measured",
+    "memory": "not measured",
+    "historicalInternshipBuild": "not available for direct measurement"
+  }
+}

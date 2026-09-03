@@ -1,0 +1,2435 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-03T04:03:21.631Z",
+  "syntheticDataOnly": true,
+  "records": [
+    {
+      "benchmark": "initial-render",
+      "operation": "import-to-ready",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-1000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 1000,
+      "targetLineCount": 200,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        92.2,
+        99.8,
+        103.9,
+        99,
+        104.2
+      ],
+      "medianMs": 99.8,
+      "p95Ms": 104.2,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "phaseSamples": [
+        {
+          "fileReadMs": 3,
+          "parseMs": 1,
+          "uploadToFirstResultMs": 42.5
+        },
+        {
+          "fileReadMs": 3.8,
+          "parseMs": 1.8,
+          "uploadToFirstResultMs": 46.9
+        },
+        {
+          "fileReadMs": 3.3,
+          "parseMs": 1.2,
+          "uploadToFirstResultMs": 51.2
+        },
+        {
+          "fileReadMs": 4.2,
+          "parseMs": 1.6,
+          "uploadToFirstResultMs": 50.1
+        },
+        {
+          "fileReadMs": 3.1,
+          "parseMs": 1.3,
+          "uploadToFirstResultMs": 43.6
+        }
+      ],
+      "phaseSummary": {
+        "fileReadMs": {
+          "medianMs": 3.3,
+          "p95Ms": 4.2
+        },
+        "parseMs": {
+          "medianMs": 1.3,
+          "p95Ms": 1.8
+        },
+        "uploadToFirstResultMs": {
+          "medianMs": 46.9,
+          "p95Ms": 51.2
+        }
+      },
+      "notes": "Browser performance.now() from file-input assignment immediately before change dispatch through ready UI plus two animation frames. Includes File reading, main-thread parse, Vue commit, and first virtual-list paint observation."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "raw-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-1000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 1000,
+      "targetLineCount": 200,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        11.7,
+        10.6,
+        12.7,
+        12.5,
+        12.1
+      ],
+      "medianMs": 12.1,
+      "p95Ms": 12.7,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 139,
+            "visibleEnd": 173,
+            "viewportHeight": 560,
+            "scrollTop": 4716,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 139,
+            "visibleEnd": 173,
+            "viewportHeight": 560,
+            "scrollTop": 4716,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic raw-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-1000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 1000,
+      "targetLineCount": 200,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        11.6,
+        15.1,
+        13.7,
+        13.7,
+        14
+      ],
+      "medianMs": 13.7,
+      "p95Ms": 15.1,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 23,
+            "visibleEnd": 42,
+            "viewportHeight": 560,
+            "scrollTop": 2196,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 23,
+            "visibleEnd": 42,
+            "viewportHeight": 560,
+            "scrollTop": 2196,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 827,
+            "visibleEnd": 861,
+            "viewportHeight": 560,
+            "scrollTop": 26724,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic result-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-to-raw-locate",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-1000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 1000,
+      "targetLineCount": 200,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        3,
+        8,
+        5.7,
+        6.1,
+        6.4
+      ],
+      "medianMs": 6.1,
+      "p95Ms": 8,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 818,
+            "visibleEnd": 853,
+            "viewportHeight": 560,
+            "scrollTop": 26456,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 143,
+            "visibleEnd": 178,
+            "viewportHeight": 560,
+            "scrollTop": 4856,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 23,
+            "visibleEnd": 42,
+            "viewportHeight": 560,
+            "scrollTop": 2196,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 818,
+            "visibleEnd": 853,
+            "viewportHeight": 560,
+            "scrollTop": 26456,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 143,
+            "visibleEnd": 178,
+            "viewportHeight": 560,
+            "scrollTop": 4856,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 23,
+            "visibleEnd": 42,
+            "viewportHeight": 560,
+            "scrollTop": 2196,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 818,
+            "visibleEnd": 853,
+            "viewportHeight": 560,
+            "scrollTop": 26456,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 158,
+            "visibleEnd": 177,
+            "viewportHeight": 560,
+            "scrollTop": 12444,
+            "scrollHeight": 15200
+          }
+        }
+      ],
+      "locatedRawLineIndexes": [
+        835,
+        160,
+        835,
+        160,
+        835
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from a rendered result-row click until its rawLineIndex is both inside the left virtual range and represented by the highlighted DOM row."
+    },
+    {
+      "benchmark": "tab-switch",
+      "operation": "switch-active-tab-to-visible",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-1000-seed-20260901.log+synthetic-multi-1000-seed-20260902.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 1000,
+      "targetLineCount": 200,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        8,
+        8.5,
+        7.9,
+        7.2,
+        8
+      ],
+      "medianMs": 8,
+      "p95Ms": 8.5,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 32000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 15200
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from tab button click until the target heading and result virtual list are committed to the page. Both sessions are already parsed; this isolates UI tab switching."
+    },
+    {
+      "benchmark": "initial-render",
+      "operation": "import-to-ready",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-10000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 10000,
+      "targetLineCount": 2000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        144,
+        133.6,
+        131.6,
+        126.8,
+        127.5
+      ],
+      "medianMs": 131.6,
+      "p95Ms": 144,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "phaseSamples": [
+        {
+          "fileReadMs": 4.9,
+          "parseMs": 8.9,
+          "uploadToFirstResultMs": 60.9
+        },
+        {
+          "fileReadMs": 4.5,
+          "parseMs": 7,
+          "uploadToFirstResultMs": 54.5
+        },
+        {
+          "fileReadMs": 10,
+          "parseMs": 6.7,
+          "uploadToFirstResultMs": 54.1
+        },
+        {
+          "fileReadMs": 5.6,
+          "parseMs": 6.6,
+          "uploadToFirstResultMs": 58.9
+        },
+        {
+          "fileReadMs": 5.4,
+          "parseMs": 7.2,
+          "uploadToFirstResultMs": 57.2
+        }
+      ],
+      "phaseSummary": {
+        "fileReadMs": {
+          "medianMs": 5.4,
+          "p95Ms": 10
+        },
+        "parseMs": {
+          "medianMs": 7,
+          "p95Ms": 8.9
+        },
+        "uploadToFirstResultMs": {
+          "medianMs": 57.2,
+          "p95Ms": 60.9
+        }
+      },
+      "notes": "Browser performance.now() from file-input assignment immediately before change dispatch through ready UI plus two animation frames. Includes File reading, main-thread parse, Vue commit, and first virtual-list paint observation."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "raw-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-10000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 10000,
+      "targetLineCount": 2000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        10.7,
+        14.3,
+        12.3,
+        13.6,
+        14.9
+      ],
+      "medianMs": 13.6,
+      "p95Ms": 14.9,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 1489,
+            "visibleEnd": 1523,
+            "viewportHeight": 560,
+            "scrollTop": 47916,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 1489,
+            "visibleEnd": 1523,
+            "viewportHeight": 560,
+            "scrollTop": 47916,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic raw-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-10000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 10000,
+      "targetLineCount": 2000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        14.8,
+        12.7,
+        14.3,
+        16.1,
+        14.2
+      ],
+      "medianMs": 14.3,
+      "p95Ms": 16.1,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 293,
+            "visibleEnd": 312,
+            "viewportHeight": 560,
+            "scrollTop": 22716,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 293,
+            "visibleEnd": 312,
+            "viewportHeight": 560,
+            "scrollTop": 22716,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 8477,
+            "visibleEnd": 8511,
+            "viewportHeight": 560,
+            "scrollTop": 271524,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic result-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-to-raw-locate",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-10000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 10000,
+      "targetLineCount": 2000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        3.6,
+        9,
+        8.5,
+        7.6,
+        7.2
+      ],
+      "medianMs": 7.6,
+      "p95Ms": 9,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 8468,
+            "visibleEnd": 8503,
+            "viewportHeight": 560,
+            "scrollTop": 271256,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 1493,
+            "visibleEnd": 1528,
+            "viewportHeight": 560,
+            "scrollTop": 48056,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 293,
+            "visibleEnd": 312,
+            "viewportHeight": 560,
+            "scrollTop": 22716,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 8468,
+            "visibleEnd": 8503,
+            "viewportHeight": 560,
+            "scrollTop": 271256,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 1493,
+            "visibleEnd": 1528,
+            "viewportHeight": 560,
+            "scrollTop": 48056,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 293,
+            "visibleEnd": 312,
+            "viewportHeight": 560,
+            "scrollTop": 22716,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 8468,
+            "visibleEnd": 8503,
+            "viewportHeight": 560,
+            "scrollTop": 271256,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 1688,
+            "visibleEnd": 1707,
+            "viewportHeight": 560,
+            "scrollTop": 128724,
+            "scrollHeight": 152000
+          }
+        }
+      ],
+      "locatedRawLineIndexes": [
+        8485,
+        1510,
+        8485,
+        1510,
+        8485
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from a rendered result-row click until its rawLineIndex is both inside the left virtual range and represented by the highlighted DOM row."
+    },
+    {
+      "benchmark": "tab-switch",
+      "operation": "switch-active-tab-to-visible",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-10000-seed-20260901.log+synthetic-multi-10000-seed-20260902.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 10000,
+      "targetLineCount": 2000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        7.1,
+        7.2,
+        7.2,
+        7,
+        7.2
+      ],
+      "medianMs": 7.2,
+      "p95Ms": 7.2,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 320000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 152000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from tab button click until the target heading and result virtual list are committed to the page. Both sessions are already parsed; this isolates UI tab switching."
+    },
+    {
+      "benchmark": "initial-render",
+      "operation": "import-to-ready",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-30000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 30000,
+      "targetLineCount": 6000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        232.4,
+        234.9,
+        238.3,
+        230.1,
+        204.1
+      ],
+      "medianMs": 232.4,
+      "p95Ms": 238.3,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [
+          90,
+          59
+        ],
+        [
+          93,
+          57
+        ],
+        [
+          99,
+          56
+        ],
+        [
+          92,
+          51
+        ],
+        [
+          83,
+          50
+        ]
+      ],
+      "phaseSamples": [
+        {
+          "fileReadMs": 14.7,
+          "parseMs": 22.6,
+          "uploadToFirstResultMs": 79.6
+        },
+        {
+          "fileReadMs": 8.4,
+          "parseMs": 21,
+          "uploadToFirstResultMs": 73.3
+        },
+        {
+          "fileReadMs": 9.4,
+          "parseMs": 20.7,
+          "uploadToFirstResultMs": 71.8
+        },
+        {
+          "fileReadMs": 8.5,
+          "parseMs": 17.4,
+          "uploadToFirstResultMs": 70.6
+        },
+        {
+          "fileReadMs": 8.1,
+          "parseMs": 16.8,
+          "uploadToFirstResultMs": 64.5
+        }
+      ],
+      "phaseSummary": {
+        "fileReadMs": {
+          "medianMs": 8.5,
+          "p95Ms": 14.7
+        },
+        "parseMs": {
+          "medianMs": 20.7,
+          "p95Ms": 22.6
+        },
+        "uploadToFirstResultMs": {
+          "medianMs": 71.8,
+          "p95Ms": 79.6
+        }
+      },
+      "notes": "Browser performance.now() from file-input assignment immediately before change dispatch through ready UI plus two animation frames. Includes File reading, main-thread parse, Vue commit, and first virtual-list paint observation."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "raw-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-30000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 30000,
+      "targetLineCount": 6000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        10.9,
+        16.1,
+        14.5,
+        12.4,
+        14.7
+      ],
+      "medianMs": 14.5,
+      "p95Ms": 16.1,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 4489,
+            "visibleEnd": 4523,
+            "viewportHeight": 560,
+            "scrollTop": 143916,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 4489,
+            "visibleEnd": 4523,
+            "viewportHeight": 560,
+            "scrollTop": 143916,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic raw-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-list-programmatic-scroll",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-30000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 30000,
+      "targetLineCount": 6000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        14.8,
+        13.7,
+        15.6,
+        14.9,
+        15.3
+      ],
+      "medianMs": 14.9,
+      "p95Ms": 15.6,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 893,
+            "visibleEnd": 912,
+            "viewportHeight": 560,
+            "scrollTop": 68316,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 893,
+            "visibleEnd": 912,
+            "viewportHeight": 560,
+            "scrollTop": 68316,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 34,
+            "renderedDomCount": 34,
+            "renderedUpperBound": 36,
+            "visibleStart": 25477,
+            "visibleEnd": 25511,
+            "viewportHeight": 560,
+            "scrollTop": 815524,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Programmatic result-list scrollTop change through two animation frames. This is a repeatable DOM update measurement, not an FPS or subjective wheel-smoothness claim."
+    },
+    {
+      "benchmark": "scroll",
+      "operation": "result-to-raw-locate",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-30000-seed-20260901.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 30000,
+      "targetLineCount": 6000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        4.3,
+        11.3,
+        11.1,
+        10.7,
+        11.1
+      ],
+      "medianMs": 11.1,
+      "p95Ms": 11.3,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 25468,
+            "visibleEnd": 25503,
+            "viewportHeight": 560,
+            "scrollTop": 815256,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 4493,
+            "visibleEnd": 4528,
+            "viewportHeight": 560,
+            "scrollTop": 144056,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 893,
+            "visibleEnd": 912,
+            "viewportHeight": 560,
+            "scrollTop": 68316,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 25468,
+            "visibleEnd": 25503,
+            "viewportHeight": 560,
+            "scrollTop": 815256,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 4493,
+            "visibleEnd": 4528,
+            "viewportHeight": 560,
+            "scrollTop": 144056,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 893,
+            "visibleEnd": 912,
+            "viewportHeight": 560,
+            "scrollTop": 68316,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 35,
+            "renderedDomCount": 35,
+            "renderedUpperBound": 36,
+            "visibleStart": 25468,
+            "visibleEnd": 25503,
+            "viewportHeight": 560,
+            "scrollTop": 815256,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 19,
+            "renderedDomCount": 19,
+            "renderedUpperBound": 20,
+            "visibleStart": 5088,
+            "visibleEnd": 5107,
+            "viewportHeight": 560,
+            "scrollTop": 387124,
+            "scrollHeight": 456000
+          }
+        }
+      ],
+      "locatedRawLineIndexes": [
+        25485,
+        4510,
+        25485,
+        4510,
+        25485
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from a rendered result-row click until its rawLineIndex is both inside the left virtual range and represented by the highlighted DOM row."
+    },
+    {
+      "benchmark": "tab-switch",
+      "operation": "switch-active-tab-to-visible",
+      "timestamp": "2026-09-03T04:03:21.631Z",
+      "catalogVersion": "sha256:24cccf567c0c62088b038ee1189716b8e62795319c7c52c14c4bf5348c9189d6",
+      "browser": "chromium 152.0.7977.65",
+      "browserChannel": "chrome",
+      "os": "win32 10.0.26200",
+      "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fixture": "synthetic-single-30000-seed-20260901.log+synthetic-multi-30000-seed-20260902.log",
+      "fixtureSeed": 20260901,
+      "lineCount": 30000,
+      "targetLineCount": 6000,
+      "stressScale": false,
+      "samples": 5,
+      "warmupRuns": 1,
+      "rawValuesMs": [
+        8.8,
+        8.6,
+        8.6,
+        8.4,
+        8.7
+      ],
+      "medianMs": 8.6,
+      "p95Ms": 8.8,
+      "structuralSamples": [
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        },
+        {
+          "left": {
+            "renderedAttributeCount": 26,
+            "renderedDomCount": 26,
+            "renderedUpperBound": 36,
+            "visibleStart": 0,
+            "visibleEnd": 26,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 960000
+          },
+          "right": {
+            "renderedAttributeCount": 13,
+            "renderedDomCount": 13,
+            "renderedUpperBound": 20,
+            "visibleStart": 0,
+            "visibleEnd": 13,
+            "viewportHeight": 560,
+            "scrollTop": 0,
+            "scrollHeight": 456000
+          }
+        }
+      ],
+      "longTaskSupported": true,
+      "rawLongTaskDurationsMsBySample": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "notes": "Browser performance.now() from tab button click until the target heading and result virtual list are committed to the page. Both sessions are already parsed; this isolates UI tab switching."
+    }
+  ],
+  "exclusions": {
+    "fps": "not measured",
+    "memory": "not measured"
+  }
+}
